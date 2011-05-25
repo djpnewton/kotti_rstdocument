@@ -8,6 +8,7 @@ from kotti.views.util import TemplateAPI
 from deform.widget import TextAreaWidget
 
 from docutils.core import publish_string
+from BeautifulSoup import BeautifulSoup
 
 from kotti_rstdocument.resources import RstDocument
 
@@ -26,10 +27,13 @@ def add_rstdocument(context, request):
     return generic_add(context, request, RstDocumentSchema(), RstDocument, u'rstdocument')
 
 def view_rstdocument(context, request):
-    html = publish_string(context.body, writer_name='html')
+    docutils_html = publish_string(context.body, writer_name='html')
+    soup = BeautifulSoup(docutils_html)
+    body = soup.find('body')
+    content_html = ''.join(unicode(c) for c in body.contents).strip()
     return {
         'api': TemplateAPI(context, request),
-        'html': html,
+        'html': content_html,
         }
 
 def includeme_edit(config):
