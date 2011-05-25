@@ -24,6 +24,6 @@ like this::
   With this, you'll be able to add calendar and event items in your site.
 
 
-  .. _Docutils library: http://docutils.sourceforge.net
-  .. _Find out more about Kotti: http://pypi.python.org/pypi/Kotti
+.. _Docutils library: http://docutils.sourceforge.net
+.. _Find out more about Kotti: http://pypi.python.org/pypi/Kotti
 
