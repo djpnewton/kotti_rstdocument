@@ -1,6 +1,12 @@
 History
 =======
 
+0.2 - 2011-06-01
+----------------
+
+- Fix security holes (disable file_insertion_enabled and raw_enabled reStructuredText parsing options)
+
+- Initial release
 0.1 - 2011-05-26
 ----------------
 

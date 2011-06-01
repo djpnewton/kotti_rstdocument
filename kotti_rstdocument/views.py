@@ -29,7 +29,9 @@ def view_rstdocument(context, request):
     # TODO:
     # look into http://www.arnebrodowski.de/blog/write-your-own-restructuredtext-writer.html
 
-    overrides = {'initial_header_level': 3,
+    overrides = {'file_insertion_enabled': False,
+                 'raw_enabled': False,
+                 'initial_header_level': 3,
                  'doctitle_xform': False}
     parts = publish_parts(context.body, writer_name='html4css1', settings_overrides=overrides)
     content_html = parts['html_body']
