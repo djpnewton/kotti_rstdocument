@@ -21,8 +21,6 @@ like this::
 
   kotti.configurators = kotti_rstdocument.kotti_configure
 
-  With this, you'll be able to add calendar and event items in your site.
-
 
 .. _Docutils library: http://docutils.sourceforge.net
 .. _Find out more about Kotti: http://pypi.python.org/pypi/Kotti

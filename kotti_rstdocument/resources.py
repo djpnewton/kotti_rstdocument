@@ -6,10 +6,10 @@ from sqlalchemy import UnicodeText
 from sqlalchemy import String
 from sqlalchemy.orm import mapper
 from kotti import metadata
-from kotti.resources import Node
+from kotti.resources import Content
 
-class RstDocument(Node):
-    type_info = Node.type_info.copy(
+class RstDocument(Content):
+    type_info = Content.type_info.copy(
         name=u'Restructured Text Document',
         add_view=u'add_rstdocument',
         addable_to=[u'Document'],
@@ -21,9 +21,9 @@ class RstDocument(Node):
         self.mime_type = mime_type
 
 rstDocuments = Table('rstDocuments', metadata,
-    Column('id', Integer, ForeignKey('nodes.id'), primary_key=True),
+    Column('id', Integer, ForeignKey('contents.id'), primary_key=True),
     Column('body', UnicodeText()),
     Column('mime_type', String(30)),
 )
 
-mapper(RstDocument, rstDocuments, inherits=Node, polymorphic_identity='rstDocument')
+mapper(RstDocument, rstDocuments, inherits=Content, polymorphic_identity='rstDocument')
