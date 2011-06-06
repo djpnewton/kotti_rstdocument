@@ -1,8 +1,7 @@
 import colander
-from kotti.views.edit import NodeSchema
+from kotti.views.edit import ContentSchema
 from kotti.views.edit import generic_edit
 from kotti.views.edit import generic_add
-from kotti.views.view import view_node
 from kotti.views.util import ensure_view_selector
 from kotti.views.util import TemplateAPI
 from deform.widget import TextAreaWidget
@@ -11,7 +10,7 @@ from docutils.core import publish_parts
 
 from kotti_rstdocument.resources import RstDocument
 
-class RstDocumentSchema(NodeSchema):
+class RstDocumentSchema(ContentSchema):
     body = colander.SchemaNode(
         colander.String(),
         widget=TextAreaWidget(cols=80, rows=40),
