@@ -6,7 +6,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
 setup(name='kotti_rstdocument',
-      version='0.2',
+      version='0.3',
       description="Use reStructuredText documents in your Kotti site",
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
