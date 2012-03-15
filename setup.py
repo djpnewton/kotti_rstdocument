@@ -25,6 +25,6 @@ setup(name='kotti_rstdocument',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
-      install_requires=['Kotti', 'docutils'],
+      install_requires=['Kotti>=0.6.0b1', 'docutils'],
       tests_require=['nose', 'coverage'],
       )
